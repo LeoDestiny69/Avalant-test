@@ -1,0 +1,32 @@
+users , orders, products, order_items, categories
+
+users
+- id PK
+
+orders
+- id PK
+- users.id FK IDX
+- status: pending,processing,shipped,delivered, cancelled
+
+products
+- id PK
+- categories.id FK IDX
+- price
+- name
+
+categories
+- id PK
+- products.id FK 
+
+order_items
+- id PK
+- orders.id FK IDX
+- products.id FK 
+- quantity
+- price
+
+Relationship
+users 1 : many orders
+orders 1 : many order_items
+product 1 : many order_items
+categories 1 : many products
